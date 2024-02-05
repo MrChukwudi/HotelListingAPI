@@ -41,7 +41,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseSerilogRequestLogging();
+app.UseSerilogRequestLogging(); //For Logging our requests from clients
+
 
 app.UseHttpsRedirection();
 
