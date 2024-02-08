@@ -1,10 +1,21 @@
 //Here; we declare our Application Builder:
+using HotelListingAPI.Data;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Then, we Add services that will be necessary to run our Program to the Dependency-Injection (Services) Container:
+
+
+//Setting Up the DB and ConnectionString:
+var connectionString = builder.Configuration.GetConnectionString("HotelListingDbConectionString"); //Configuration simply points to the appsetting.json file. 
+//Exevuting the Databse Connection with the above Connection string, and the DbContext file:
+builder.Services.AddDbContext<HotelListingDbContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
