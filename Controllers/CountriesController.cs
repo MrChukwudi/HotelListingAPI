@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HotelListingAPI.Data;
+using HotelListingAPI.Models.Country;
+using AutoMapper;
 
 namespace HotelListingAPI.Controllers
 {
@@ -14,10 +16,12 @@ namespace HotelListingAPI.Controllers
     public class CountriesController : ControllerBase
     {
         private readonly HotelListingDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CountriesController(HotelListingDbContext context)
+        public CountriesController(HotelListingDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mappper;
         }
 
 
@@ -36,13 +40,16 @@ namespace HotelListingAPI.Controllers
         public async Task<ActionResult<Country>> GetCountry(int id)
         {
             var country = await _context.Countries.FindAsync(id);
-
+            
             if (country == null)
             {
                 return NotFound();
             }
 
-            return Ok(country);
+            //Country to show User:
+            var countryToShow = _mapper.Map<CreateCountryDto>(country);
+
+            return Ok(countryToShow);
         }
 
 
@@ -81,9 +88,20 @@ namespace HotelListingAPI.Controllers
         // POST: api/Countries
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Country>> PostCountry(Country country)
+        public async Task<ActionResult<Country>> PostCountry(CreateCountryDto createCountry)
         {
-            _context.Countries.Add(country);
+            //Method1 for Executing MApping the hardway:
+            var countryHardWay = new Country
+            {
+                Name = createCountry.Name,
+                ShortName = createCountry.ShortName,
+            };
+
+            //Executing MApping using AutoMapper:
+            var country = _mapper.Map<Country>(createCountry);
+
+
+            _context.Countries.Add(country); 
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCountry", new { id = country.Id }, country);

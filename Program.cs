@@ -1,4 +1,5 @@
 //Here; we declare our Application Builder:
+using HotelListingAPI.Configurations;
 using HotelListingAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -31,6 +32,9 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod()
               );
 });
+
+//Registering/Building/Adding my AutoMapper service to the application DI build process:
+builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 
 //Configuring my Logger using serilog: ctx === builder context (acts like our builder); lc === loger configuration that was set inside the appsetting.json
