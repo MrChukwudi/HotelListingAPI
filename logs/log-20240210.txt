@@ -1,0 +1,9 @@
+2024-02-10 00:25:57.023 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-10 00:25:57.183 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-10 00:25:57.198 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-10 00:25:57.203 +01:00 [INF] Hosting environment: Development
+2024-02-10 00:25:57.329 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-10 00:27:20.906 +01:00 [INF] HTTP POST /api/Countries responded 201 in 4661.3064 ms
+2024-02-10 00:29:10.613 +01:00 [INF] HTTP GET /api/countries responded 200 in 1084.2890 ms
+2024-02-10 00:31:17.241 +01:00 [INF] HTTP GET /api/countries responded 200 in 50.7549 ms
+2024-02-10 00:31:35.296 +01:00 [INF] HTTP POST /api/countries responded 201 in 20.2403 ms
