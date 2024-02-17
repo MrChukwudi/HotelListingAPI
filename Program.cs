@@ -1,6 +1,8 @@
 //Here; we declare our Application Builder:
 using HotelListingAPI.Configurations;
+using HotelListingAPI.Contracts;
 using HotelListingAPI.Data;
+using HotelListingAPI.Repository;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -40,7 +42,9 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 //Configuring my Logger using serilog: ctx === builder context (acts like our builder); lc === loger configuration that was set inside the appsetting.json
 builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
 
-
+//Registering our REPOSITORIES"
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(ICountriesRepository), typeof(CountriesRepository));
 
 //This is where we Build our Application
 var app = builder.Build();
