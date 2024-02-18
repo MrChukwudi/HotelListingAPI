@@ -1,0 +1,1 @@
+2024-02-18 04:29:21.883 +01:00 [INF] HTTP GET /api/hotels responded 200 in 1664.1455 ms

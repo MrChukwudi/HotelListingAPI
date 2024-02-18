@@ -45,6 +45,7 @@ builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console().ReadFrom.Configuration
 //Registering our REPOSITORIES"
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(ICountriesRepository), typeof(CountriesRepository));
+builder.Services.AddScoped(typeof(IHotelRepository), typeof(HotelsRepository));
 
 //This is where we Build our Application
 var app = builder.Build();

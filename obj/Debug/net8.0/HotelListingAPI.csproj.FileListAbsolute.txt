@@ -275,3 +275,5 @@ C:\Users\DELL\Desktop\Projects\HotelListingAPI\bin\Debug\net8.0\runtimes\win\lib
 C:\Users\DELL\Desktop\Projects\HotelListingAPI\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\DELL\Desktop\Projects\HotelListingAPI\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\DELL\Desktop\Projects\HotelListingAPI\obj\Debug\net8.0\HotelLis.7BDD56F8.Up2Date
+C:\Users\DELL\Desktop\Projects\HotelListingAPI\obj\Debug\net8.0\HotelListingAPI.RazorAssemblyInfo.cache
+C:\Users\DELL\Desktop\Projects\HotelListingAPI\obj\Debug\net8.0\HotelListingAPI.RazorAssemblyInfo.cs

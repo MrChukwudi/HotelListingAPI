@@ -1,0 +1,40 @@
+2024-02-17 05:58:50.239 +01:00 [INF] HTTP GET /api/Countries responded 200 in 1225.2937 ms
+2024-02-17 05:59:02.080 +01:00 [INF] HTTP GET /api/Countries/2 responded 200 in 49.3372 ms
+2024-02-17 05:59:39.255 +01:00 [INF] HTTP PUT /api/Countries/2 responded 204 in 34.4063 ms
+2024-02-17 05:59:52.062 +01:00 [INF] HTTP GET /api/Countries/2 responded 200 in 3.7208 ms
+2024-02-17 22:02:30.252 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-17 22:02:30.311 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-17 22:02:30.406 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-17 22:02:30.417 +01:00 [INF] Hosting environment: Development
+2024-02-17 22:02:30.419 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-17 22:02:41.963 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-17 22:02:42.005 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-17 22:02:42.078 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-17 22:02:42.084 +01:00 [INF] Hosting environment: Development
+2024-02-17 22:02:42.086 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-17 22:03:27.173 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-17 22:03:27.211 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-17 22:03:27.259 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-17 22:03:27.261 +01:00 [INF] Hosting environment: Development
+2024-02-17 22:03:27.262 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-17 22:05:23.218 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-17 22:05:23.293 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-17 22:05:23.376 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-17 22:05:23.419 +01:00 [INF] Hosting environment: Development
+2024-02-17 22:05:23.421 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-17 22:06:33.025 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-17 22:06:33.067 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-17 22:06:33.163 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-17 22:06:33.172 +01:00 [INF] Hosting environment: Development
+2024-02-17 22:06:33.176 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-17 22:09:40.781 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-17 22:09:41.015 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-17 22:09:41.611 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-17 22:09:41.849 +01:00 [INF] Hosting environment: Development
+2024-02-17 22:09:41.851 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-17 22:15:51.066 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-17 22:15:51.114 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-17 22:15:51.192 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-17 22:15:51.199 +01:00 [INF] Hosting environment: Development
+2024-02-17 22:15:51.200 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-17 22:34:04.280 +01:00 [INF] HTTP GET /api/Hotels responded 200 in 4573.5232 ms
