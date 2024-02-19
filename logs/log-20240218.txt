@@ -168,3 +168,8 @@ Error Number:547,State:0,Class:16
 2024-02-18 06:21:13.768 +01:00 [INF] Application started. Press Ctrl+C to shut down.
 2024-02-18 06:21:13.775 +01:00 [INF] Hosting environment: Development
 2024-02-18 06:21:13.776 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-18 06:21:57.125 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-18 06:21:59.182 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-18 06:22:01.172 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-18 06:22:02.284 +01:00 [INF] Hosting environment: Development
+2024-02-18 06:22:03.314 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
