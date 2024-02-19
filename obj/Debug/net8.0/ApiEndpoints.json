@@ -118,7 +118,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[HotelListingAPI.Data.Hotel, HotelListingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HotelListingAPI.Models.Hotel.HotelDto, HotelListingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -137,8 +137,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "hotel",
-        "Type": "HotelListingAPI.Data.Hotel",
+        "Name": "hotelToCreate",
+        "Type": "HotelListingAPI.Models.Hotel.CreateHotelDto",
         "IsRequired": true
       }
     ],
@@ -170,7 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HotelListingAPI.Data.Hotel",
+        "Type": "HotelListingAPI.Models.Hotel.HotelDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -194,8 +194,8 @@
         "IsRequired": true
       },
       {
-        "Name": "hotel",
-        "Type": "HotelListingAPI.Data.Hotel",
+        "Name": "hotelDto",
+        "Type": "HotelListingAPI.Models.Hotel.HotelDto",
         "IsRequired": true
       }
     ],

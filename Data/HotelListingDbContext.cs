@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using HotelListingAPI.Data.Configurations;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelListingAPI.Data
 {
-    public class HotelListingDbContext : DbContext
+    public class HotelListingDbContext :  IdentityDbContext<AppUser> //Use Plain DbContext inheritance here if you're using a different Db for Identity
     {
 
         //Here we define the contract between our App and Our Database:
@@ -23,9 +25,12 @@ namespace HotelListingAPI.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            //Applying IndentityRole Configuration:
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+
             //Defining What we need to happen once a DB Table is Created:
             //1: Create some Default Country Data 
-            modelBuilder.Entity<Country>()
+            /*modelBuilder.Entity<Country>()
                 .HasData( //HasData will take a List of the Data type that is to be seeded
                 new Country 
                 { 
@@ -46,9 +51,11 @@ namespace HotelListingAPI.Data
                     ShortName = "CI"
                 }
               );
+            */
+            modelBuilder.ApplyConfiguration(new CountryConfiguration());
 
             //2: Create some Default Hotel Data 
-            modelBuilder.Entity<Hotel>()
+            /*modelBuilder.Entity<Hotel>()
                 .HasData(
                 new Hotel
                 {
@@ -80,6 +87,8 @@ namespace HotelListingAPI.Data
 
 
                 );
+            */
+            modelBuilder.ApplyConfiguration(new HotelConfiguration());
 
 
         }
