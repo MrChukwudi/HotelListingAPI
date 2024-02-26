@@ -1,0 +1,11 @@
+2024-02-20 04:01:00.155 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-20 04:01:00.217 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-20 04:01:00.293 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-20 04:01:00.299 +01:00 [INF] Hosting environment: Development
+2024-02-20 04:01:00.301 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-20 04:50:15.363 +01:00 [INF] Now listening on: https://localhost:7172
+2024-02-20 04:50:15.457 +01:00 [INF] Now listening on: http://localhost:5225
+2024-02-20 04:50:15.579 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-20 04:50:15.596 +01:00 [INF] Hosting environment: Development
+2024-02-20 04:50:15.598 +01:00 [INF] Content root path: C:\Users\DELL\Desktop\Projects\HotelListingAPI
+2024-02-20 04:51:01.086 +01:00 [INF] HTTP POST /api/Account/register responded 200 in 5244.1958 ms

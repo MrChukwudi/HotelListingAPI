@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HotelListingAPI.Data
 {
-    public class HotelListingDbContext :  IdentityDbContext<AppUser> //Use Plain DbContext inheritance here if you're using a different Db for Identity
+    public class HotelListingDbContext :  IdentityDbContext<ApiUser> //Use Plain DbContext inheritance here if you're using a different Db for Identity
     {
 
         //Here we define the contract between our App and Our Database:

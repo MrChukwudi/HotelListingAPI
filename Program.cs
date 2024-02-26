@@ -3,9 +3,12 @@ using HotelListingAPI.Configurations;
 using HotelListingAPI.Contracts;
 using HotelListingAPI.Data;
 using HotelListingAPI.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,18 +43,47 @@ builder.Services.AddCors(options =>
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 //Setting up my Identity Core for Security Management:
-builder.Services.AddIdentityCore<AppUser>()  //Adding Facility to Validate User-Type using AppUser which EXTENDS the default Identity User Model
+builder.Services.AddIdentityCore<ApiUser>()  //Adding Facility to Validate User-Type using AppUser which EXTENDS the default Identity User Model
     .AddRoles<IdentityRole>() //Adding Facility to Validate User-Role using the default Identity UserRole Model
-    .AddEntityFrameworkStores<HotelListingDbContext>(); //Deffining the Database to store your Project's Identity Data.
+    .AddTokenProvider<DataProtectorTokenProvider<ApiUser>>("HotelListingAPI")
+    .AddEntityFrameworkStores<HotelListingDbContext>() //Deffining the Database to store your Project's Identity Data.
+    .AddDefaultTokenProviders();
 
 
 //Configuring my Logger using serilog: ctx === builder context (acts like our builder); lc === loger configuration that was set inside the appsetting.json
 builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
 
-//Registering our REPOSITORIES"
+//Registering our REPOSITORIES" The below two ways are equally appropriate for adding/Registering Service
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(ICountriesRepository), typeof(CountriesRepository));
 builder.Services.AddScoped(typeof(IHotelRepository), typeof(HotelsRepository));
+builder.Services.AddScoped<IAuthManager, AuthManager>();
+
+
+
+
+//Adding Our Authentication Service:
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; //This cascades the string "Bearer"
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options => {
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateIssuer  = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ClockSkew   = TimeSpan.Zero,
+        ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
+        ValidAudience = builder.Configuration["JwtSettings:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Key"]))
+    };
+
+});
+
+
+
 
 //This is where we Build our Application
 var app = builder.Build();
@@ -74,6 +106,7 @@ app.UseHttpsRedirection();
 
 app.UseCors("AllowAll"); //This is where we used the CorsPolicy service we defined earlier.
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

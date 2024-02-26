@@ -9,6 +9,7 @@ using HotelListingAPI.Data;
 using HotelListingAPI.Contracts;
 using AutoMapper;
 using HotelListingAPI.Models.Hotel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotelListingAPI.Controllers
 {
@@ -27,6 +28,7 @@ namespace HotelListingAPI.Controllers
 
         // GET: api/Hotels
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<HotelDto>>> GetHotels()
         {
             var hotels =  await _hotelRepository.GetAllAsync();
